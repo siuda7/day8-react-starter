@@ -5,8 +5,6 @@ import CounterGroupSum from "./CounterGroupSum"
 
 const MultipleCounter = () => {
 
-    //const [size, setSize] = useState(5)
-
     const [counters, setCounters] = useState([0, 0, 0, 0, 0])
 
     return (

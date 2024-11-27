@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Counter from "./Counter"
 
 const CounterGroup = (props) => {
@@ -11,7 +10,7 @@ const CounterGroup = (props) => {
 
     return (
         <div>
-            {counters.map((count, index) => <Counter key={index} count={count} setCounter={setCounter} index={index}/>)} 
+            {counters.map((count, index) => <Counter key={Math.random()} count={count} setCounter={setCounter} index={index}/>)} 
         </div>
     )
     
