@@ -1,16 +1,16 @@
 import { useState } from "react";
 import "./Counter.css"
 
-const Counter = () => {
+const Counter = (props) => {
 
-    const [count, setCount] = useState(0);
+    const {count, setCounter, index} = props
 
     const increase = () => {
-        setCount(count+1)
+        setCounter(index, count+1)
     }
 
     const decrease = () => {
-        setCount(count-1)
+        setCounter(index, count-1)
     }
 
     return (

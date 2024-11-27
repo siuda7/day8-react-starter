@@ -1,15 +1,19 @@
 import { useState } from "react"
 import CounterGroupGenerator from "./CounterGroupGenerator"
 import CounterGroup from "./CounterGroup"
+import CounterGroupSum from "./CounterGroupSum"
 
 const MultipleCounter = () => {
 
-    const [size, setSize] = useState(5)
+    //const [size, setSize] = useState(5)
+
+    const [counters, setCounters] = useState([0, 0, 0, 0, 0])
 
     return (
         <div>
-            <CounterGroupGenerator size={size} setSize={setSize} />
-            <CounterGroup size={size}/>
+            <CounterGroupGenerator counters={counters.length} setCounters={setCounters} />
+            <CounterGroupSum counters={counters}/>
+            <CounterGroup counters={counters} setCounters={setCounters}/>
         </div>
     )
 }

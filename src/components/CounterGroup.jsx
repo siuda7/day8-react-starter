@@ -3,11 +3,15 @@ import Counter from "./Counter"
 
 const CounterGroup = (props) => {
 
-    const {size} = props
+    const {counters, setCounters} = props
+
+    const setCounter = (index, value) => {
+        setCounters(counters.with(index, value))
+    }
 
     return (
         <div>
-            {Array.from({ length: size }, (_, index) => <Counter key={index} />)} 
+            {counters.map((count, index) => <Counter key={index} count={count} setCounter={setCounter} index={index}/>)} 
         </div>
     )
     

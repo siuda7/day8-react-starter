@@ -2,18 +2,20 @@ import { useState } from "react";
 
 const CounterGroupGenerator = (props) => {
 
-    const [currentSize, setCurrentSize] = useState(props.size)
+    const [currentSize, setCurrentSize] = useState(parseInt(props.counters))
 
     const MIN_VALUE = 0;
 
     const MAX_VALUE = 20;
 
     const handleInputChange = (event) => {
-        setCurrentSize(event.target.value)
+        setCurrentSize(parseInt(event.target.value))
     }
 
     const handleReset = () => {
-        if (currentSize !== props.size) props.setSize(currentSize)
+        if (currentSize !== props.counters) {
+            props.setCounters(Array(currentSize).fill(0))
+        }
     }
 
     return (
